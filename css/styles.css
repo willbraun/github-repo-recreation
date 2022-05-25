@@ -63,6 +63,19 @@ header {
   background-color: var(--accent-grey);
 }
 
+.count {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+  background-color: var(--accent-grey-light);
+  height: 20px;
+  width: 30px;
+  border-radius: 10px;
+  padding-top: 4px;
+  transform: translateY(-2px);
+}
+
 main {
   max-width: 1300px;
   margin: auto;

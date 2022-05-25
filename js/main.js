@@ -8,6 +8,10 @@ const generateHTML = data => {
     document.querySelector('.repos').innerHTML = html;
 }
 
+const updateRepoCount = data => {
+    document.querySelector('.count').innerHTML = data.length.toString();
+}
+
 fetch(`https://api.github.com/users/willbraun/repos`, {
     headers: {
         Authorization: `token ${token}`,
@@ -16,6 +20,7 @@ fetch(`https://api.github.com/users/willbraun/repos`, {
     .then((response) => response.json())
     .then((data) => {
         generateHTML({repos: data});
+        updateRepoCount(data);
         console.log(data);
     });
 
