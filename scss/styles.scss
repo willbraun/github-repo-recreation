@@ -118,6 +118,12 @@ aside {
     p {
         color: var(--font-dark);
     }
+
+    .org-pic {
+        width: 50px;
+        border-radius: 7px;
+        border: 1px solid var(--accent-grey-light)
+    }
 }
 
 .repos {
