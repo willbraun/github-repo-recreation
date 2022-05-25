@@ -15,8 +15,8 @@ fetch(`https://api.github.com/users/willbraun/repos`, {
     })
     .then((response) => response.json())
     .then((data) => {
-        generateHTML(data[0]);
-        console.log(data[0]);
+        generateHTML({repos: data});
+        console.log(data);
     });
 
 console.log(format(new Date(2014, 1, 11), 'MM/dd/yyyy'));
