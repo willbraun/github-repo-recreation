@@ -1,5 +1,5 @@
 import { token } from './access_token.js';
-import format from 'date-fns/format/index.js';
+// import format from './../node_modules/date-fns/format/index.js';
 
 const generateHTML = data => {
     const source = document.querySelector('#repo-template').innerHTML;

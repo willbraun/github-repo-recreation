@@ -90,6 +90,7 @@ aside p {
 }
 
 .repo {
+  position: relative;
   border-bottom: 1px solid var(--accent-grey-light);
   padding: 20px 0;
 }
@@ -113,6 +114,31 @@ aside p {
   transform: translateY(-2px);
   border: 1px solid var(--accent-grey-light);
   border-radius: 15px;
+}
+
+.repo-buttons {
+  position: absolute;
+  top: 25%;
+  right: 0;
+  border: 1px solid var(--accent-grey-light);
+  border-radius: 5px;
+  display: flex;
+  overflow: hidden;
+}
+.repo-buttons button {
+  background-color: var(--accent-grey);
+  color: var(--font-light);
+  font-size: 0.8rem;
+  padding: 5px 10px;
+}
+
+.toggle-star {
+  border: none;
+  border-right: 1px solid var(--accent-grey-light);
+}
+
+.add-to-list {
+  border: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
