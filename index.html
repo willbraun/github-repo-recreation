@@ -50,7 +50,7 @@
         <main>
             <aside>
                 <img src="" alt="">
-                <h2>Will Braun</h2>
+                <p class="name">Will Braun</p>
                 <p>willbraun</p>
                 <button>Follow</button>
                 <p>Organizations</p>
@@ -70,18 +70,29 @@
     </div>
 
     <script id="repo-template" type="text/x-handlebars-template">
-        <a href=""></a>
-        <p>Public</p>
-
-        <button>
-            <i class="fa-regular fa-star"></i>
-            Star
-        </button>
-        <button>
-            <i class="fa-solid fa-caret-down"></i>
-        </button>
+        <article class="repo">
+            <a href="{{url}}">{{name}}</a>
+            <p>
+                {{#if private}}
+                Private
+                {{else}}
+                Public
+                {{/if}}
+            </p>
+            <div class="lang-color"></div>
+            <p>{{language}}</p>
+    
+            <button>
+                <i class="fa-regular fa-star"></i>
+                Star
+            </button>
+            <button>
+                <i class="fa-solid fa-caret-down"></i>
+            </button>
+        </article>
     </script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./js/main.js" type="module"></script>
 </body>
 </html>

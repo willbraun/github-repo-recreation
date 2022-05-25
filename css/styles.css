@@ -8,6 +8,8 @@
 
 * {
   box-sizing: border-box;
+  font-size: 1rem;
+  font-weight: normal;
 }
 
 .container {
@@ -16,8 +18,10 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
-h2 {
+.name {
   color: var(--font-light);
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 a {
@@ -29,11 +33,13 @@ header {
   height: 80px;
   display: flex;
   justify-content: center;
+  align-items: center;
   border-bottom: 1px solid #ccc;
 }
 
 .links {
   width: 600px;
+  height: 50%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,6 +52,15 @@ header {
 }
 .links p {
   display: inline-block;
+  margin: 0;
+}
+.links div {
+  border-radius: 5px;
+  transition: 0.1s;
+  padding: 10px;
+}
+.links div:hover {
+  background-color: var(--accent-grey);
 }
 
 main {
@@ -56,6 +71,7 @@ main {
 
 aside {
   width: 300px;
+  margin-right: 30px;
 }
 aside button {
   height: 30px;
@@ -67,6 +83,20 @@ aside button {
 }
 aside p {
   color: var(--font-dark);
+}
+
+.repos {
+  width: 100%;
+}
+
+.repo {
+  border-bottom: 1px solid var(--accent-grey-light);
+  padding: 20px 0;
+}
+.repo a {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #428FEF;
 }
 
 /*# sourceMappingURL=styles.css.map */
