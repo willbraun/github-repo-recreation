@@ -26,24 +26,32 @@ a {
 
 header {
   width: 100%;
-  height: 100px;
+  height: 80px;
   display: flex;
   justify-content: center;
   border-bottom: 1px solid #ccc;
 }
 
 .links {
-  width: 500px;
+  width: 600px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .links a {
   color: var(--font-light);
+}
+.links i {
+  padding-right: 3px;
+}
+.links p {
+  display: inline-block;
 }
 
 main {
   max-width: 1300px;
   margin: auto;
+  display: flex;
 }
 
 aside {
