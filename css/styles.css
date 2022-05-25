@@ -10,6 +10,7 @@
   box-sizing: border-box;
   font-size: 1rem;
   font-weight: normal;
+  transition: 0.1s;
 }
 
 .container {
@@ -60,7 +61,6 @@ header {
 }
 .links div {
   border-radius: 5px;
-  transition: 0.1s;
   padding: 10px;
 }
 .links div:hover {
@@ -106,6 +106,7 @@ aside button {
   background-color: var(--accent-grey);
   border: 1px solid var(--accent-grey-light);
   border-radius: 5px;
+  font-weight: 700;
 }
 aside p {
   color: var(--font-dark);
@@ -125,6 +126,10 @@ aside p {
   font-size: 1.3rem;
   font-weight: 600;
   color: #428FEF;
+}
+
+.repo-link:hover {
+  text-decoration: underline;
 }
 
 .privacy, .lang, .updated {
@@ -165,6 +170,11 @@ aside p {
 
 .add-to-list {
   border: none;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--accent-grey-light);
 }
 
 /*# sourceMappingURL=styles.css.map */

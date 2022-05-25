@@ -1,15 +1,11 @@
 import { token } from './access_token.js';
 // import format from './../node_modules/date-fns/format/index.js';
 
-const generateHTML = data => {
+const generateRepoHTML = data => {
     const source = document.querySelector('#repo-template').innerHTML;
     const template = Handlebars.compile(source);
     const html = template(data);
     document.querySelector('.repos').innerHTML = html;
-}
-
-const updateRepoCount = data => {
-    document.querySelector('.count').innerHTML = data.length.toString();
 }
 
 fetch(`https://api.github.com/users/willbraun/repos`, {
@@ -19,8 +15,20 @@ fetch(`https://api.github.com/users/willbraun/repos`, {
     })
     .then((response) => response.json())
     .then((data) => {
-        generateHTML({repos: data});
-        updateRepoCount(data);
+        generateRepoHTML({repos: data});
+        document.querySelector('.count').innerHTML = data.length.toString();
+
+        console.log(data);
+    });
+
+fetch(`https://api.github.com/users/willbraun`, {
+    headers: {
+        Authorization: `token ${token}`,
+    },
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        document.querySelector('.profile-pic').src = data.avatar_url;
         console.log(data);
     });
 

@@ -10,6 +10,7 @@
     box-sizing: border-box;
     font-size: 1rem;
     font-weight: normal;
+    transition: 0.1s;
 }
 
 .container {
@@ -48,7 +49,6 @@ header {
     justify-content: space-between;
     align-items: center;
 
-
     a {
         color: var(--font-light);
     }
@@ -64,7 +64,6 @@ header {
 
     div {
         border-radius: 5px;
-        transition: 0.1s;
         padding: 10px;
     }
 
@@ -92,8 +91,6 @@ main {
     display: flex;
 }
 
-
-
 aside {
     position: relative;
     width: 400px;
@@ -115,6 +112,7 @@ aside {
         background-color: var(--accent-grey);
         border: 1px solid var(--accent-grey-light);
         border-radius: 5px;
+        font-weight: 700;
     }
 
     p {
@@ -136,6 +134,10 @@ aside {
     font-size: 1.3rem;
     font-weight: 600;
     color: #428FEF;
+}
+
+.repo-link:hover {
+    text-decoration: underline;
 }
 
 .privacy, .lang, .updated {
@@ -167,7 +169,6 @@ aside {
         color: var(--font-light);
         font-size: 0.8rem;
         padding: 5px 10px;
-        // border: none;
     }
 }
 
@@ -178,4 +179,9 @@ aside {
 
 .add-to-list {
     border: none
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--accent-grey-light);
 }
