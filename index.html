@@ -58,21 +58,15 @@
             </aside>
 
             <section class="repos">
-
             </section>
 
         </main>
-
-
-
-
-
     </div>
 
     <script id="repo-template" type="text/x-handlebars-template">
         <article class="repo">
-            <a href="{{url}}">{{name}}</a>
-            <p>
+            <a class="repo-link" href="{{url}}">{{name}}</a>
+            <p class="privacy">
                 {{#if private}}
                 Private
                 {{else}}
@@ -80,13 +74,13 @@
                 {{/if}}
             </p>
             <div class="lang-color"></div>
-            <p>{{language}}</p>
+            <p class="lang">{{language}}</p>
     
-            <button>
+            <button class="toggle-star">
                 <i class="fa-regular fa-star"></i>
                 Star
             </button>
-            <button>
+            <button class="add-to-list">
                 <i class="fa-solid fa-caret-down"></i>
             </button>
         </article>
