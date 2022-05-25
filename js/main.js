@@ -1,4 +1,5 @@
 import { token } from './access_token.js';
+import format from './node_modules/date-fns/format/index.js';
 
 const generateHTML = data => {
     const source = document.querySelector('#repo-template').innerHTML;
@@ -18,3 +19,5 @@ fetch(`https://api.github.com/users/willbraun/repos`, {
         console.log(data[0]);
     });
 
+console.log(format(new Date(2014, 1, 11), 'MM/dd/yyyy'));
+    //=> '02/11/2014'

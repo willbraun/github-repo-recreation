@@ -100,26 +100,26 @@ aside {
 .repo {
     border-bottom: 1px solid var(--accent-grey-light);
     padding: 20px 0;
-    
-    .repo-link {
-        font-size: 1.3rem;
-        font-weight: 600;
-        color: #428FEF;
-    }
-
-    .privacy {
-        display: inline-block;
-        font-size: 0.75rem;
-        color: var(--font-dark);
-        font-weight: 700;
-        padding: 3px 5px 1px;
-        margin-left: 10px;
-        transform: translateY(-2px);
-        border: 1px solid var(--accent-grey-light);
-        border-radius: 15px;
-        
-
-    }
-
-
 }
+
+.repo-link {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #428FEF;
+}
+
+.privacy, .lang, .updated {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: var(--font-dark);
+}
+
+.privacy {
+    font-weight: 700;
+    padding: 3px 5px 1px;
+    margin-left: 10px;
+    transform: translateY(-2px);
+    border: 1px solid var(--accent-grey-light);
+    border-radius: 15px;
+}
+

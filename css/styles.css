@@ -93,15 +93,20 @@ aside p {
   border-bottom: 1px solid var(--accent-grey-light);
   padding: 20px 0;
 }
-.repo .repo-link {
+
+.repo-link {
   font-size: 1.3rem;
   font-weight: 600;
   color: #428FEF;
 }
-.repo .privacy {
+
+.privacy, .lang, .updated {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--font-dark);
+}
+
+.privacy {
   font-weight: 700;
   padding: 3px 5px 1px;
   margin-left: 10px;
