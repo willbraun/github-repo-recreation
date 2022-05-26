@@ -8,45 +8,32 @@ const generateRepoHTML = data => {
     document.querySelector('.repos').innerHTML = html;
 }
 
-
-
-fetch(`https://api.github.com/users/willbraun/repos`, {
+const fetchAndDo = (url, callback) => {
+    fetch(url, {
     headers: {
         Authorization: `token ${token}`,
     },
     })
     .then((response) => response.json())
-    .then((data) => {
-        generateRepoHTML({repos: data});
-        document.querySelector('.count').innerHTML = data.length.toString();
+    .then(data => callback(data));
+}
 
-        console.log(data);
-    });
+fetchAndDo(`https://api.github.com/users/willbraun/repos`, repoArray => {
+    generateRepoHTML({repos: repoArray});
+    document.querySelector('.count').innerHTML = repoArray.length.toString();
+    console.log(repoArray);
+})
 
-fetch(`https://api.github.com/users/willbraun`, {
-    headers: {
-        Authorization: `token ${token}`,
-    },
-    })
-    .then((response) => response.json())
-    .then((data) => {
-        document.querySelector('.profile-pic').src = data.avatar_url;
-        document.querySelector('.profile-pic').alt = data.name;
-        console.log(data);
-    });
+fetchAndDo(`https://api.github.com/users/willbraun`, personalData => {
+    document.querySelector('.profile-pic').src = personalData.avatar_url;
+    document.querySelector('.profile-pic').alt = personalData.name;
+    console.log(personalData);
+})
 
-fetch(`https://api.github.com/users/willbraun/orgs`, {
-    headers: {
-        Authorization: `token ${token}`,
-    },
-    })
-    .then((response) => response.json())
-    .then((data) => {
-        document.querySelector('.org-pic').src = data[0].avatar_url;
-        document.querySelector('.org-pic').alt = data[0].login;
-
-        console.log(data);
-    });
+fetchAndDo(`https://api.github.com/users/willbraun/orgs`, orgArray => {
+    document.querySelector('.org-pic').src = orgArray[0].avatar_url;
+    document.querySelector('.org-pic').alt = orgArray[0].login;
+})
        
 
 console.log(format(new Date(2014, 1, 11), 'MM/dd/yyyy'));
