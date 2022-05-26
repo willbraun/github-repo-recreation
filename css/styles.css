@@ -161,6 +161,10 @@ aside .org-pic {
   border-radius: 50%;
 }
 
+.lang {
+  margin-right: 20px;
+}
+
 .repo-buttons {
   position: absolute;
   top: 25%;

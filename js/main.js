@@ -7,17 +7,17 @@ Handlebars.registerHelper('setColor', function(lang) {
 Handlebars.registerHelper('findDaysElapsed', function(startDate) {
     const now = new Date();
     const date = new Date(startDate);
+    const seconds = Math.floor((now - date) / 1000);
 
-    const seconds = dateFns.differenceInSeconds(now, date);
     if (seconds < 60) {return `Updated less than 1 minute ago`};
 
-    const minutes = dateFns.differenceInMinutes(now, date);
+    const minutes = Math.floor(seconds / 60);
     if (minutes < 60) {return `Updated ${minutes} minutes ago`};
 
-    const hours = dateFns.differenceInHours(now, date);
+    const hours = Math.floor(minutes / 60);
     if (hours < 24) {return `Updated ${hours} hours ago`};
     
-    const days = dateFns.differenceInDays(now, date);
+    const days = Math.floor(hours / 24);
     if (days === 1) {return `Updated 1 day ago`}
     else if (days < 32) {return `Updated ${days} days ago`}
     else {return `Updated on ${dateFns.format(date, 'MMM d, YYYY')}`};
@@ -51,3 +51,4 @@ fetchAndDo(`https://api.github.com/users/willbraun/orgs`, orgArray => {
     document.querySelector('.org-pic').src = orgArray[0].avatar_url;
     document.querySelector('.org-pic').alt = orgArray[0].login;
 })
+
