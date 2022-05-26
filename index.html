@@ -78,7 +78,7 @@
             <br>
             <div class="lang-color" style="background-color: {{setColor language}}"></div>
             <p class="lang">{{language}}</p>
-            <p class="updated">{{findDaysElapsed updated_at}}</p>
+            <p class="updated">{{findTimeElapsed updated_at}}</p>
     
             <div class="repo-buttons">
                 <button class="toggle-star">
@@ -93,7 +93,6 @@
         {{/each}}
     </script>
 
-    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./js/main.js" type="module"></script>
 </body>

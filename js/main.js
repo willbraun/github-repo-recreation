@@ -4,7 +4,7 @@ Handlebars.registerHelper('setColor', function(lang) {
     return colors[lang];
 });
 
-Handlebars.registerHelper('findDaysElapsed', function(startDate) {
+Handlebars.registerHelper('findTimeElapsed', function(startDate) {
     const now = new Date();
     const date = new Date(startDate);
     const seconds = Math.floor((now - date) / 1000);
