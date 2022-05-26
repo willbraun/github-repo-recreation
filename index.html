@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://kit.fontawesome.com/54c3753162.js" crossorigin="anonymous"></script>
-    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
 </head>
 <body>
     
@@ -51,12 +50,12 @@
 
         <main>
             <aside>
-                <img class="profile-pic" src="images/github_profile_pic.jpeg" alt="profile pic">
+                <img class="profile-pic" src="" alt="">
                 <p class="name">Will Braun</p>
                 <p>willbraun</p>
                 <button>Follow</button>
                 <p>Organizations</p>
-                <img class="org-pic" src="images/CCS_small.jpeg" alt="CCS logo small">
+                <img class="org-pic" src="" alt="">
             </aside>
 
             <section class="repos">
@@ -76,7 +75,8 @@
                 Public
                 {{/if}}
             </p>
-            <div class="lang-color"></div>
+            <br>
+            <div class="lang-color" style="background-color: {{setColor language}}"></div>
             <p class="lang">{{language}}</p>
             <p class="updated">{{findDaysElapsed updated_at}}</p>
     
@@ -93,6 +93,7 @@
         {{/each}}
     </script>
 
+    <script src="http://cdn.date-fns.org/v1.9.0/date_fns.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./js/main.js" type="module"></script>
 </body>

@@ -1,14 +1,10 @@
-import { token } from './access_token.js';
-// import addDays from './../node_modules/date-fns/addDays/index.js';
+import { colors } from './colors.js';
 
-const generateRepoHTML = data => {
-    const source = document.querySelector('#repo-template').innerHTML;
-    const template = Handlebars.compile(source);
-    const html = template(data);
-    document.querySelector('.repos').innerHTML = html;
-}
+Handlebars.registerHelper('setColor', function(lang) {
+    return colors[lang];
+});
 
-Handlebars.registerHelper('findDaysElapsed', function (startDate) {
+Handlebars.registerHelper('findDaysElapsed', function(startDate) {
     const now = new Date();
     const date = new Date(startDate);
 
@@ -25,14 +21,17 @@ Handlebars.registerHelper('findDaysElapsed', function (startDate) {
     if (days === 1) {return `Updated 1 day ago`}
     else if (days < 32) {return `Updated ${days} days ago`}
     else {return `Updated on ${dateFns.format(date, 'MMM d, YYYY')}`};
-})
+});
+
+const generateRepoHTML = data => {
+    const source = document.querySelector('#repo-template').innerHTML;
+    const template = Handlebars.compile(source);
+    const html = template(data);
+    document.querySelector('.repos').innerHTML = html;
+}
 
 const fetchAndDo = (url, callback) => {
-    fetch(url, {
-    headers: {
-        Authorization: `token ${token}`,
-    },
-    })
+    fetch(url)
     .then((response) => response.json())
     .then(data => callback(data));
 }
@@ -40,7 +39,7 @@ const fetchAndDo = (url, callback) => {
 fetchAndDo(`https://api.github.com/users/willbraun/repos`, repoArray => {
     generateRepoHTML({repos: repoArray});
     document.querySelector('.count').innerHTML = repoArray.length.toString();
-
+    document.querySelector('.lang-color').style.backgroundColor = colors[repoArray.language];
 })
 
 fetchAndDo(`https://api.github.com/users/willbraun`, personalData => {

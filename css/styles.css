@@ -152,6 +152,15 @@ aside .org-pic {
   border-radius: 15px;
 }
 
+.lang-color {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
 .repo-buttons {
   position: absolute;
   top: 25%;
