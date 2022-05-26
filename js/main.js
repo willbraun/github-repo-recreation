@@ -51,4 +51,3 @@ fetchAndDo(`https://api.github.com/users/willbraun/orgs`, orgArray => {
     document.querySelector('.org-pic').src = orgArray[0].avatar_url;
     document.querySelector('.org-pic').alt = orgArray[0].login;
 })
-
