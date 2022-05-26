@@ -204,3 +204,7 @@ button:hover {
     cursor: pointer;
     background-color: var(--accent-grey-light);
 }
+
+button:active {
+    background-color: var(--accent-grey);
+}

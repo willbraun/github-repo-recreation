@@ -195,4 +195,8 @@ button:hover {
   background-color: var(--accent-grey-light);
 }
 
+button:active {
+  background-color: var(--accent-grey);
+}
+
 /*# sourceMappingURL=styles.css.map */
