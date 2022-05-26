@@ -20,7 +20,7 @@ Handlebars.registerHelper('findTimeElapsed', function(startDate) {
     const days = Math.floor(hours / 24);
     if (days === 1) {return `Updated 1 day ago`}
     else if (days < 32) {return `Updated ${days} days ago`}
-    else {return `Updated on ${dateFns.format(date, 'MMM d, YYYY')}`};
+    else {return `Updated on ${date.toLocaleDateString(undefined, {year: 'numeric', month: 'short', day: 'numeric' })}`};
 });
 
 const generateRepoHTML = data => {
